@@ -20,7 +20,7 @@ router.put("/:id", async (req, res) => {
   const task = await Task.findByIdAndUpdate(
     req.params.id,
     { completed: true },
-    { new: true }
+    { returnDocument: "after" }
   );
   res.json(task);
 });
